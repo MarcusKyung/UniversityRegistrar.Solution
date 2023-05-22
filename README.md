@@ -1,10 +1,15 @@
-students:
+Students:
 -StudentId
 -StudentName
 -EnrollmentDate
 
-courses:
+Courses:
 -CourseId
 -CourseName
 -CourseNumber
--description
+-Department
+
+CourseStudents:
+-CourseStudentId
+-CourseId
+-StudentId
