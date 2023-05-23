@@ -5,11 +5,11 @@
 @using UniversityRegistrar.Models
 @model UniversityRegistrar.Models.Course;
 
-<h1>Course Details</h1>
+<h2>Course Details</h2>
 <hr>
-<h3>@Html.Label("Course Name"): @Html.DisplayFor(model => model.CourseName)</h3>
-<h3>@Html.Label("Course Number"): @Html.DisplayFor(model => model.CourseNumber)</h3>
-<h3>@Html.Label("Department"): @Html.DisplayFor(model => model.Department)</h3>
+<h4>@Html.Label("Course Name"): @Html.DisplayFor(model => model.CourseName)</h4>
+<h4>@Html.Label("Course Number"): @Html.DisplayFor(model => model.CourseNumber)</h4>
+<h4>@Html.Label("Department"): @Html.DisplayFor(model => model.Department)</h4>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -33,5 +33,6 @@ else
 <br>
 <p>@Html.ActionLink("Back to courses list", "Index")</p>
 <p>@Html.ActionLink("Edit course", "Edit", new { id = Model.CourseId })</p>
+<p>@Html.ActionLink("Delete course", "Delete", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Add a student", "AddStudent", new { id = Model.CourseId })</p>
 
