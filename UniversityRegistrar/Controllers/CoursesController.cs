@@ -23,6 +23,7 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult Create()
     {
+      ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
       return View();
     }
 
@@ -31,6 +32,7 @@ namespace UniversityRegistrar.Controllers
     {
       if (!ModelState.IsValid)
       {
+        ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
         return View(course);
       }
       else

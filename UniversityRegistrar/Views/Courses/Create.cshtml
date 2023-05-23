@@ -9,7 +9,6 @@
 
 <p>@Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 <p>@Html.ValidationMessageFor(model => model.CourseNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-<p>@Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
@@ -20,7 +19,7 @@
     @Html.TextBoxFor(model => model.CourseNumber)
 
     @Html.LabelFor(model => model.Department)
-    @Html.TextBoxFor(model => model.Department)
+    @Html.DropDownList("DepartmentId")
 
     <input type="submit" value="Add new course" class="btn btn-primary" />
 }

@@ -12,6 +12,8 @@ namespace UniversityRegistrar.Models
         public string StudentName { get; set; }
         [Required(ErrorMessage = "The item'student's enrollment date description can't be empty!")]
         public DateTime EnrollmentDate { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
         public List<CourseStudent> JoinEntities { get;} //collection navigation property
 
     }
