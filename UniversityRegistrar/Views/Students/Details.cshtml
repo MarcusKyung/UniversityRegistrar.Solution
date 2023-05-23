@@ -8,6 +8,8 @@
 <h2>Student Details</h2>
 <hr />
 <h3>@Html.Label("Student Name"): @Html.DisplayFor(model => model.StudentName)</h3>
+<h3>@Html.Label("Enrollment Date"): @Model.EnrollmentDate.ToString("MM-dd-yyyy")</h3>
+
 
 @if(@Model.JoinEntities.Count == 0)
 {

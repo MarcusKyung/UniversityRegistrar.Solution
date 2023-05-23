@@ -4,8 +4,10 @@
 
 @model UniversityRegistrar.Models.Course;
 
-<h1>Add a new course</h1>
+<h2>Edit course</h2>
 <hr>
+
+<h4>Edit @Html.DisplayFor(model => model.CourseNumber)</h4>
 
 @using (Html.BeginForm())
 {
@@ -18,6 +20,6 @@
     @Html.LabelFor(model => model.Department)
     @Html.TextBoxFor(model => model.Department)
 
-    <input type="submit" value="Add new course" class="btn btn-primary" />
+    <input type="submit" value="Save" class="btn btn-primary" />
 }
 <p>@Html.ActionLink("Show all courses", "Index")</p>

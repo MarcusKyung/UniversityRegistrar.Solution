@@ -66,5 +66,19 @@ namespace UniversityRegistrar.Controllers
       }
       return RedirectToAction("Details", new { id = student.StudentId });
     }
+
+    public ActionResult Edit(int id)
+    {
+      Student thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
+      return View(thisStudent);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Student student)
+    {
+      _db.Students.Update(student);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

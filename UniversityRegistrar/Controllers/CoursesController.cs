@@ -43,6 +43,20 @@ namespace UniversityRegistrar.Controllers
       return View(thisCourse);
     }
 
+    public ActionResult Edit(int id)
+    {
+      Course thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      return View(thisCourse);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Course course)
+    {
+      _db.Courses.Update(course);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
     public ActionResult AddStudent(int id)
     {
       Course thisCourse = _db.Courses.FirstOrDefault(courses => courses.CourseId == id);
