@@ -7,6 +7,10 @@
 <h2>Add a new course</h2>
 <hr>
 
+<p>@Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.CourseNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.CourseName)

@@ -29,9 +29,16 @@ namespace UniversityRegistrar.Controllers
     [HttpPost]
     public ActionResult Create(Course course)
     {
-      _db.Courses.Add(course);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if (!ModelState.IsValid)
+      {
+        return View(course);
+      }
+      else
+      {
+        _db.Courses.Add(course);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 
     public ActionResult Details(int id)
